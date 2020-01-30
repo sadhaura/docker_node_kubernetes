@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-node-server
+  labels:
+    app: my-node-server
+spec:
+  template:
+    metadata:
+      labels:
+        app: my-node-server
+    spec:
+      containers:
+      - name: my-node-server
+        image: 2034/docker-node:2
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-node-server
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-node-server
+  ports:
+    - name: php
+      protocol: TCP
+      port: 80
+      targetPort: 8085
+
