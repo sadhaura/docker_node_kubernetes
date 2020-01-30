@@ -20,6 +20,7 @@ Your Node App is now ready!! You can access it via http://localhost:49162.
 For Kubernetes:-
 
 1.Clone the repository on kubernetes cluster.
+
 git clone https://github.com/sadhaura/docker_node_kubernetes.git
 
 2.cd docker_node_kubernetes/kubernetes
